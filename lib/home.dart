@@ -41,6 +41,36 @@ class _HomePageState extends State<HomePage> {
                 child: ElevatedButton(
                   child: const Text("Login with Facebook"),
                   onPressed: () async {
+                    //way3
+                    // var result = await FacebookAuth.instance
+                    //     .login(
+                    //       permissions: ['public_profile', 'email', 'pages_show_list', 'pages_messaging', 'pages_manage_metadata'],
+                    //     ); // by default we request the email and the public profile
+                    // if (result.status == LoginStatus.success) {
+                    //   // you are logged
+                    //   final AccessToken accessToken = result.accessToken!;
+                    // } else {
+                    //   print(result.status);
+                    //   print(result.message);
+                    // }
+                    //way2
+                    // var token = await FacebookAuth.instance.login();
+                    // print('token.userId.toLowerCase()');
+                    // print(token.userId.toLowerCase());
+                    // final OAuthCredential facebookAuthCredential =
+                    //     FacebookAuthProvider.credential(token.token);
+
+                    // // Once signed in, return the UserCredential
+                    // FirebaseAuth.instance
+                    //     .signInWithCredential(facebookAuthCredential)
+                    //     .then((value) {
+                    //   print(value.user!.displayName.toString());
+                    //   setState(() {
+                    //     _isLoggedIn = true;
+                    //     _userObj = value.user as Map;
+                    //   });
+                    // });
+                    //way1
                     FacebookAuth.instance.login(
                         permissions: ["public_profile", "email"]).then((value) {
                       FacebookAuth.instance.getUserData().then((userData) {
@@ -51,6 +81,11 @@ class _HomePageState extends State<HomePage> {
                       });
                     }).then((value) {
                       print('SSSSSSSSSSSSSSSSSSS');
+                    }).then((value) {
+                      print('value');
+                    }).catchError((onError) {
+                      print('onError');
+                      print(onError.toString());
                     });
                   },
                 ),

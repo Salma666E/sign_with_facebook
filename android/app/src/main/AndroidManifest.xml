@@ -1,12 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sign_with_facebook">
    <uses-permission android:name="android.permission.INTERNET"/>
+   <queries>
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+   </queries>
    <application
         android:label="sign_with_facebook"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="533665128062988"/>
-        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="6b28b78b2cd4de789024489d1790747f"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -33,5 +34,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="533665128062988"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken"
+            android:value="6b28b78b2cd4de789024489d1790747f"/>
     </application>
 </manifest>
