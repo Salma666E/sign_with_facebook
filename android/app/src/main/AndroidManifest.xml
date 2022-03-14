@@ -27,6 +27,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
@@ -35,7 +36,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
         <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="533665128062988"/>
+            android:value="@string/facebook_app_id"/>
         <meta-data android:name="com.facebook.sdk.ClientToken"
             android:value="6b28b78b2cd4de789024489d1790747f"/>
     </application>
